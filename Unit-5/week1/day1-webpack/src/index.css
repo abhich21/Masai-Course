@@ -1,0 +1,28 @@
+#cont{
+    margin: auto;
+    padding: 3%;
+}
+
+#btn{
+    background-color: coral;
+    color: white;
+    margin: 1%;
+    border-radius: 5%;
+}
+
+#task_div{
+    width:90%;
+    margin:auto;
+    margin-left:-1%;
+    padding:2%;
+    background-color: greenyellow;
+    height:fit-content;
+    margin-top:10%;
+    border: 1px solid rgb(102, 27, 189)
+}
+
+#logo{
+    border: none;
+    margin-left: 40%;
+}
+
