@@ -3,12 +3,10 @@ import './App.css';
 
 function App() {
 
-  const counter = 10;
+  //const counter = 10;
   return (
     <div className="App">
-      <Counter
-        value={counter}
-      />
+      <Counter/>
     </div>
   );
 }
