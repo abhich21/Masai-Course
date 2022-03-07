@@ -5,7 +5,7 @@ import { Books } from "./components/Books";
 import { Pens } from "./components/Pens"
 import { Notebooks } from "./components/Notebooks"
 import { Inkpens } from "./components/Inkpens"
-import {Total} from "./components/Total"
+//import {Total} from "./components/Total"
 
 function App() {
   return (
