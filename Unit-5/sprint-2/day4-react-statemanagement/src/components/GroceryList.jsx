@@ -1,7 +1,8 @@
-export const GroceryList = ({list}) => {
+export const GroceryList = ({title,status,id, handleDelete}) => {
     return (<div>
-        <p>{list} <button id="btn" onClick={(e) => {
-        
+        <p>{title} <button id="btn" onClick={() => {
+           // console.log();
+            handleDelete(id)
         }}>Delete</button></p>
         
     </div>
