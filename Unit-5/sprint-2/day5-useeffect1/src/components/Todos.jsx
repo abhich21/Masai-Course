@@ -2,32 +2,20 @@ import { useEffect, useState } from "react"
 
 
 export const Todos = () => {
-    const [counter1, setCounter1] = useState(0);
-
-    const [counter2, setCounter2] = useState(0);
-
-    console.log("before effect")
-
-    useEffect(() => {
-        console.log("inside effect 1")
-    },[counter1]);
-
-    useEffect(() => {
-        console.log("inside effect 2")
-    },[counter2]);
-
-
-    console.log("after effect") 
+    const [task, setTask] = useState("");
     
-    return <div>Todos: <button
-        onClick={() => {
-            setCounter1(counter1 + 1);
-    }}
-    >Add To </button>
+    return <div>
+        <input type="text" onChange={(e) => setTask(e.target.value)} />
         <button
             onClick={() => {
-                setCounter2(counter2 + 1);
+                fetch("http://localhost:3001/tasks", {
+                    method: "POST",
+                    body: JSON.stringify({ title: task, status: false }),
+                    headers: {
+                        "Content-Type" : "application/json",
+                    },
+                });
         }}
-        >Add To 2</button>
+        >Save</button>
     </div>
 }
