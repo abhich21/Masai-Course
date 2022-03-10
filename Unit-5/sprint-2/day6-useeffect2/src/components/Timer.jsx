@@ -1,19 +1,25 @@
 import { useEffect, useState } from "react"
 
 export const Timer = () => {
-    const [time, setTime] = useState(10);
+    const [time, setTime] = useState(0);
+
+    const endTime = 11;
 
     useEffect(() => {
-      const id=  setInterval(() => {
-        console.log("hello",time);
+        const id = setInterval(() => {
+           // console.log("hello", time);
             setTime((prev) => {
-                if (prev <= 1) {
+                if (prev >= endTime) {
                     clearInterval(id);
                     return 0;
                 }
-            return  prev - 1
+                return prev + 1;
             });
-    },1000)
+        }, 1000);
+        return () => {
+            clearInterval(id);
+            //console.log("stop")
+        };
     },[])
     return (
         <div>Timer:{ time}</div>
