@@ -8,12 +8,14 @@ export const Todos = () => {
 
     const [list, setList] = useState([]);
 
+    const [page, setPage] = useState(1);
+
     useEffect(() => {
         getTasks();
-    }, []);
+    }, [page]);
     
     const getTasks = () => {
-         axios.get("http://localhost:3001/tasks").then((res) => {
+         axios.get(`http://localhost:3001/tasks?_limit=3&_page=${page}`).then((res) => {
             setList(res.data)
         })
     }
@@ -34,7 +36,15 @@ export const Todos = () => {
         }}
         >Save</button>
        { list.map((e)=>(
-           <h3 key={e.id}>{ e.title}</h3>
+           <div key={e.id}>{ e.title}</div>
         ))}
+
+        <button onClick={() => {
+            setPage(page - 1);
+        } }>prev</button>
+        <button onClick={() => {
+            setPage(page + 1);
+        } }
+        >next</button>
     </div>
 }
