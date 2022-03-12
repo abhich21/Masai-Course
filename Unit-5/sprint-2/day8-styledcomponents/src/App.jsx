@@ -1,15 +1,23 @@
 
 import './App.css';
-import { Button } from './components/Button';
+import { Button, Primary, Dash, Text, Link } from './components/Button';
+
+import { useState } from "react";
 
 function App() {
+  const [theme, setTheme] = useState("light");
   return (
     <div className="App">
-      <Button>Primary Button</Button>
-      <Button>Default Button</Button>
-       <Button>Dashed Button</Button>
-      <Button>Text Button</Button>
-       <Button>Link Button</Button>    
+      <Primary theme={theme}>Primary Button</Primary>
+      <Button theme={theme}>Default Button</Button>
+       <Dash theme={theme}>Dashed Button</Dash>
+      <Text theme={theme}>Text Button</Text>
+      <Link theme={theme}>Link Button</Link>
+      <br />
+      <button onClick={() => {
+        setTheme(theme === "light" ? "dark" : "light");
+      }}
+      >change theme</button>
     </div>
   );
 }
