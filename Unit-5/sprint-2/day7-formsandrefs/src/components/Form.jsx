@@ -6,15 +6,20 @@ export const Forms = () => {
         name: "",
         age: "",
         address: "",
-        department: "",
+        department: "--select--",
         salary: "",
-        marritial_status: "",
+        married: "",
               
     });
 
+   // const [isChecked, setIsChecked]= useState(false)
+
+   
+
     const handleChange = (e) => {
-       // console.log(e.target)
-        const { id, value } = e.target;
+        console.log(e.target.value)
+        let { id, value, checked, type } = e.target;
+        value = type === "checkbox" ?   checked : value;
         setFormData({
             ...formData,
             [id] : value
@@ -29,9 +34,9 @@ export const Forms = () => {
          name: "",
         age: "",
         address: "",
-        department: "",
+        department: "--select--",
         salary: "",
-        marritial_status: "",
+        married: "",
         })
     }
     return (
@@ -43,12 +48,23 @@ export const Forms = () => {
             <input id="address" type="text" onChange={handleChange} placeholder="enter address" value={ formData.address}/>
              <label>Department</label>
             <select id="department" onChange={handleChange}>
-                <option>--------</option>
+                <option>--select--</option>
                 <option>Tech</option>
                 <option>IT</option>
                 <option>Technician</option>
             </select> <br />
              <input id="salary" type="number" onChange={handleChange} placeholder="enter salary" value={ formData.salary}/> <br /> 
+             
+            
+          <input
+            id="married"
+                type="checkbox"
+                value="true"
+            checked={formData.married}
+            onChange={handleChange} />
+           Married
+        <br />
+        
             
              <input type="submit" value="submit"/>
         </form>
