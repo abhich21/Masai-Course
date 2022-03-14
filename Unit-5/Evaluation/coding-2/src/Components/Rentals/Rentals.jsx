@@ -1,6 +1,10 @@
+import axios from "axios";
+
 import "./Rentals.css";
 
 export const Rentals = () => {
+  
+
   return (
     <div className="rentalContainer">
       <div className="sortingButtons">

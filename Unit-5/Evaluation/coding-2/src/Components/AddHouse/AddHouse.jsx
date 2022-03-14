@@ -12,6 +12,24 @@ export const AddHouse = () => {
     bachelor: ""
   });
 
+  const [list, setList] = useState([]);
+
+  const addToList = ({name,ownerName, address, araeCode, rent, bachelor}) => {
+        const payload = {
+          
+           name:,
+    ownerName,
+    address,
+    areaCode,
+    rent,
+    bachelor
+           
+
+        }
+        setList([...list, payload]);
+        //console.log(groce)
+    }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios.post("http://localhost:8080/houses", data);
@@ -25,13 +43,14 @@ export const AddHouse = () => {
       ...data,
       [className] : value
     })
+    addToList({name,ownerName, address, araeCode, rent, bachelor})
 
   }
 
 
   return (
     <div className="addHouseContainer">
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} addToList={addToList}>
         <label>name</label>
         <input onChange={handleChange} type="text" className="name"  required />
         <br />
