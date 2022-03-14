@@ -1,12 +1,3 @@
-// import "./Button.css"
-
-// export const Button = ({children}) => {
-//     return (
-//         <button className="mybutton">{children}</button>
-//     )
-    
-// }
-
 import styled from "styled-components";
 
 
@@ -27,14 +18,11 @@ const Button = styled.button
         theme === "light" ? "white" : "blue"
     )
 };
-    
-
-    &:hover{
+      &:hover{
         box-shadow : -3px 3px 5px 2px rgba(0, 0, 255, 0.8);
     }
     `;
-
-     const Primary = styled(Button)`
+  const Primary = styled(Button)`
     color : ${({theme}) => (
         theme === "light" ? "white" : "blue"
     )
