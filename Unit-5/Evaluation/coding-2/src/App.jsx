@@ -10,6 +10,9 @@ function App() {
       </button>
       {/* Show component based on state */}
       <br />
+
+      <Rentals />
+      <AddHouse/>
     </div>
   );
 }
