@@ -17,10 +17,10 @@ export const AddHouse = () => {
   const addToList = ({name,ownerName, address, araeCode, rent, bachelor}) => {
         const payload = {
           
-           name:,
+           name,
     ownerName,
     address,
-    areaCode,
+    
     rent,
     bachelor
            
@@ -30,9 +30,12 @@ export const AddHouse = () => {
         //console.log(groce)
     }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = ({ e, addToList }) => {
+    e.preventDefeult();
+    console.log("gjkggk",e, e.data)
     axios.post("http://localhost:8080/houses", data);
+   // addToList({e.name,e.ownerName, e.address, e.araeCode, e.rent,e. bachelor})
+
   };
 
   const handleChange = (e) => {
@@ -43,8 +46,7 @@ export const AddHouse = () => {
       ...data,
       [className] : value
     })
-    addToList({name,ownerName, address, araeCode, rent, bachelor})
-
+    
   }
 
 
@@ -58,7 +60,7 @@ export const AddHouse = () => {
         <input onChange={handleChange}  type="text" className="ownerName" required />
         <br />
         <label>address</label>
-        <input value={data.address} type="text" className="address" required />
+        <input onChange={handleChange} type="text" className="address" required />
         <br />
         <label>areaCode</label>
         <input onChange={handleChange} type="text" className="areaCode" required />
