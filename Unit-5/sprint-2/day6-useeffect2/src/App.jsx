@@ -6,24 +6,6 @@ import './App.css';
 function App() {
   //const [show, setShow] = useState(true);
 
-  // useEffect(() => {
-  //   console.log("first");
-  //   return () => {
-  //     console.log("first1")
-  //   }
-  // });
-  // useEffect(() => {
-  //   console.log("second");
-  //   return () => {
-  //     console.log("second2")
-  //   }
-  // },[]);
-  // useEffect(() => {
-  //   console.log("third");
-  //   return () => {
-  //     console.log("third3")
-  //   }
-  // },[show]);
 
   const ref = useRef(null);
 

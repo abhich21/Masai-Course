@@ -17,7 +17,7 @@ export const Forms = () => {
    
 
     const handleChange = (e) => {
-        console.log(e.target.value)
+       // console.log(e.target.value)
         let { id, value, checked, type } = e.target;
         value = type === "checkbox" ?   checked : value;
         setFormData({
