@@ -1,4 +1,15 @@
 {
-    "houses" : [],
-    "saved" : []
+  "houses": [
+    {
+      "name": "WDDW",
+      "ownername": "aSA",
+      "address": "Da",
+      "areaCode": "adaD",
+      "rent": "adda",
+      "preferredTenant": "married",
+      "img": "adda",
+      "id": 1
+    }
+  ],
+  "saved": []
 }

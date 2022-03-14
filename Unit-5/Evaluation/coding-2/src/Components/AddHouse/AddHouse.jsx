@@ -1,83 +1,123 @@
 import axios from "axios";
 import { useState } from "react";
-
-
 export const AddHouse = () => {
-  const [data, setData] = useState({
+  const [addhouse, setHouse] = useState({
     name: "",
-    ownerName: "",
+    ownername: "",
     address: "",
     areaCode: "",
     rent: "",
-    bachelor: ""
+    preferredTenant: "",
+    img: "",
   });
-
-  const [list, setList] = useState([]);
-
-  const addToList = ({name,ownerName, address, araeCode, rent, bachelor}) => {
-        const payload = {
-          
-           name,
-    ownerName,
-    address,
-    
-    rent,
-    bachelor
-           
-
-        }
-        setList([...list, payload]);
-        //console.log(groce)
-    }
-
-  const handleSubmit = ({ e, addToList }) => {
-    e.preventDefeult();
-    console.log("gjkggk",e, e.data)
-    axios.post("http://localhost:8080/houses", data);
-   // addToList({e.name,e.ownerName, e.address, e.araeCode, e.rent,e. bachelor})
-
+  const handleChange = (e) => {
+    let { id, value, checked, type } = e.target;
+    value = type === "checked" ? checked : value;
+    setHouse({
+      ...addhouse,
+      [id]: value,
+    });
   };
 
-  const handleChange = (e) => {
-    let { className, value, checked, type } = e.target;
-    console.log(e.target.value);
-    value = type === "checkbox" ? checked : false;
-    setData({
-      ...data,
-      [className] : value
-    })
-    
-  }
-
-
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    axios.post("http://localhost:8080/houses", addhouse).then(() => {
+      alert("Successful");
+      setHouse({
+        name: "",
+        ownername: "",
+        address: "",
+        areaCode: "",
+        rent: "",
+        preferredTenant: "",
+        img: "",
+      });
+    });
+  };
   return (
     <div className="addHouseContainer">
-      <form onSubmit={handleSubmit} addToList={addToList}>
+      <form onSubmit={handleSubmit}>
         <label>name</label>
-        <input onChange={handleChange} type="text" className="name"  required />
+        <input
+          onChange={handleChange}
+          type="text"
+          className="name"
+          id="name"
+          value={addhouse.name}
+          required
+        />
         <br />
         <label>ownerName</label>
-        <input onChange={handleChange}  type="text" className="ownerName" required />
+        <input
+          onChange={handleChange}
+          value={addhouse.ownername}
+          type="text"
+          id="ownername"
+          className="ownerName"
+          required
+        />
         <br />
         <label>address</label>
-        <input onChange={handleChange} type="text" className="address" required />
+        <input
+          onChange={handleChange}
+          value={addhouse.address}
+          type="text"
+          id="address"
+          className="address"
+          required
+        />
         <br />
         <label>areaCode</label>
-        <input onChange={handleChange} type="text" className="areaCode" required />
+        <input
+          onChange={handleChange}
+          value={addhouse.areaCode}
+          type="text"
+          id="areaCode"
+          className="areaCode"
+          required
+        />
         <br />
         <label>rent</label>
-        <input onChange={handleChange} type="text" className="rent" required />
+        <input
+          onChange={handleChange}
+          value={addhouse.rent}
+          type="text"
+          id="rent"
+          className="rent"
+          required
+        />
         <br />
         <label>preferredTenant</label>
         <br />
         <label>bachelor</label>
-        <input onChange={handleChange} checked={data.bachelor} type="checkbox" className="bachelor" />
+        <input
+          onChange={handleChange}
+          checked={addhouse.bachelor}
+          type="checkbox"
+          id="preferredTenant"
+          className="bachelor"
+          value="bachelor"
+        />
         <br />
         <label>married</label>
-        <input onChange={handleChange} checked={data.bachelor} type="checkbox" className="married" />
+        <input
+          onChange={handleChange}
+          checked={addhouse.married}
+          type="checkbox"
+          id="preferredTenant"
+          className="married"
+          value="married"
+        />
         <br />
         <label>image</label>
-        <input type="text" className="image" required />
+        <input
+          onChange={handleChange}
+          value={addhouse.img}
+          type="text"
+          id="img"
+          className="image"
+          required
+        />
         <br />
         <input className="submitBtn" type="submit" />
       </form>
