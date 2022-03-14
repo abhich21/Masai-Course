@@ -63,7 +63,7 @@ export const Rentals = () => {
               <tr key={house.id} className="houseDetails">
                 <td className="houseId">{house.id}</td>
                 <td className="houseName">{house.name} </td>
-                <td className="ownersName">{house.ownerName}</td>
+                <td className="ownersName">{house.ownername}</td>
                 <td className="address">{house.address}</td>
                 <td className="areaCode">{house.areaCode}</td>
                 <td className="rent">{house.rent}</td>
@@ -78,7 +78,7 @@ export const Rentals = () => {
                     : "Both"}
                 </td>
                 <td className="houseImage">
-                  <img src={house.image} alt="house" />
+                  <img src={house.img} alt="house" />
                 </td>
               </tr>
             );
