@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 
 export const UserDetails = () => {
     const { userid } = useParams();
@@ -10,6 +10,10 @@ export const UserDetails = () => {
         axios.get(`https://reqres.in/api/users/${userid}`)
         
     }, []);
+    if (false) {
+        //take user to login page
+        return <Navigate to={"/login"} />
+    }
 
     return (
         <div>user detais of id: {userid}</div>
