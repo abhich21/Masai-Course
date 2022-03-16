@@ -1,10 +1,18 @@
-import { Navbar } from "./Navbar";
+import { Route } from "react-router-dom";
+import {Routes as Abhi} from "react-router-dom"
+import { HomePage } from "./HomePage";
+import { ProductsDetailsPage } from "./ProductsDetailsPage";
+import { ProductsPage } from "./ProductsPage";
 
 export const Routes = () => {
   return (
     <>
-      <Navbar />
-      {/* Add Routes here */}
+        <Abhi>
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/products" element={<ProductsPage />} />
+          <Route path="/products/:id" element={<ProductsDetailsPage />} />
+          
+         </Abhi>
     </>
   );
 };

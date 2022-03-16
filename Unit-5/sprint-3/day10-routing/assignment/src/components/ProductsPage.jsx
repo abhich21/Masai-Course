@@ -6,11 +6,10 @@ export const ProductsPage = () => {
     const [products, setProducts] = useState([]);
 
     const getProducts = () => {
-        fetch("http://localhost:3001/products")
-            .then((data) => data.json()).then((res) => {
-                console.log(res);
-                setProducts(res);
-        })
+        axios.get("https://fakestoreapi.com/products").then((res) => {
+            console.log("res",res.data);
+            setProducts(res.data);
+       })
     }
 
     useEffect((() => {
@@ -35,7 +34,7 @@ export const ProductsPage = () => {
       </div>
       {products.map((el) => {
         return (
-          <div
+          <div key={el.id}
             className="container"
             style={{
               display: "grid",
@@ -46,9 +45,9 @@ export const ProductsPage = () => {
               paddingTop: "10px",
             }}
           >
-            <div className="name">{el.name}</div>
+            <div className="name">{el.title}</div>
             <div className="price">{el.price}</div>
-            <Link to={`/products/${el.id}`} key={el.id}>more details</Link>
+            <Link to={`/products/${el.id}`} >more details</Link>
           </div>
         );
       })}

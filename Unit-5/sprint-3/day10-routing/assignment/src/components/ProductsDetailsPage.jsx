@@ -4,12 +4,15 @@ import { useParams } from "react-router-dom";
 
 export const ProductsDetailsPage = () => {
     const { id } = useParams();
-    const [product, setProduct] = useState([]);
+   // console.log(id)
+    const [product, setProduct] = useState({});
 
     const getProducts = () => {
-        axios.get(`http://localhost:3001/products/${id}`)
+        axios.get(`http://fakestoreapi.com/products/${id}`)
             .then((res) => {
-                console.log(res);
+            
+               // console.log(res);
+                setProduct(res.data);
 
         })
     }
@@ -27,10 +30,10 @@ export const ProductsDetailsPage = () => {
           textAlign: "left",
         }}
       >
-        <img src={""} alt="" />
+        <img src={product.image} alt="" />
         <div className="productDetails" style={{ padding: "20px" }}>
           <div>
-            <h2 className="productName">{product.name}</h2>
+            <h2 className="productName">{product.title}</h2>
             <h5 className="productPrice">Price : {product.price}</h5>
           </div>
           <h5>Specifications : </h5>
