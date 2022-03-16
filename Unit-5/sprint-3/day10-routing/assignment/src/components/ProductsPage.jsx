@@ -3,6 +3,20 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export const ProductsPage = () => {
+    const [products, setProducts] = useState([]);
+
+    const getProducts = () => {
+        fetch("http://localhost:3001/products")
+            .then((data) => data.json()).then((res) => {
+                console.log(res);
+                setProducts(res);
+        })
+    }
+
+    useEffect((() => {
+        getProducts();
+    }),[])
+
   return (
     <>
       <div
@@ -19,7 +33,7 @@ export const ProductsPage = () => {
         <h4>Price</h4>
         <h4>Details</h4>
       </div>
-      {[].map((el) => {
+      {products.map((el) => {
         return (
           <div
             className="container"
@@ -34,7 +48,7 @@ export const ProductsPage = () => {
           >
             <div className="name">{el.name}</div>
             <div className="price">{el.price}</div>
-            <Link to={`/products/${el.id}`}>more details</Link>
+            <Link to={`/products/${el.id}`} key={el.id}>more details</Link>
           </div>
         );
       })}

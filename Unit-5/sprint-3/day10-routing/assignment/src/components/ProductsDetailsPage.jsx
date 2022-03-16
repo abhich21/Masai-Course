@@ -1,4 +1,22 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+
 export const ProductsDetailsPage = () => {
+    const { id } = useParams();
+    const [product, setProduct] = useState([]);
+
+    const getProducts = () => {
+        axios.get(`http://localhost:3001/products/${id}`)
+            .then((res) => {
+                console.log(res);
+
+        })
+    }
+
+    useEffect(() => {
+        getProducts();
+    },[])
   return (
     <>
       <div
