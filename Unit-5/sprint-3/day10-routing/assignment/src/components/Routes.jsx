@@ -8,7 +8,7 @@ export const Routes = () => {
   return (
     <>
         <Abhi>
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/products/:id" element={<ProductsDetailsPage />} />
           

@@ -46,7 +46,7 @@ export const ProductsPage = () => {
             }}
           >
             <div className="name">{el.title}</div>
-            <div className="price">{el.price}</div>
+            <div className="price">$ {el.price}</div>
             <Link to={`/products/${el.id}`} >more details</Link>
           </div>
         );
