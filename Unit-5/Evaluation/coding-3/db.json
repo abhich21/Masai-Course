@@ -1,0 +1,14 @@
+{
+    "books":[{
+   "title":"Book Name",
+   "imageUrl":"image Url",
+   "description":"Book desc",
+   "reviews":[
+       "multiple reviews here"
+   ],
+   "author":"Book Author",
+   "price": 1234,
+   "section": "Section as mentioned in problem statement",
+   "isbnNumber": 1234567
+}]
+}
