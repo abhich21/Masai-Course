@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom'
+import {BookContextFun} from './context/BookContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-       <App />
-    </BrowserRouter>
+  <BrowserRouter>
+  <BookContextFun>
+    <App />
+    </BookContextFun>
+  </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

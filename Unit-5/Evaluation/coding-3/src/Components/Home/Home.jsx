@@ -31,7 +31,10 @@ useEffect(()=>{
         }
       />
 
-      <Main className="grid grid-cols-4 p-2 mainContainer">
+      <Main className="grid grid-cols-4 p-2 mainContainer" style={{
+        display: "grid",
+        gridTemplateColumns:"repeat(3,1fr)"
+      }}>
         {/* 
             Iterate over books that you get from network
             populate a <BookCard /> component

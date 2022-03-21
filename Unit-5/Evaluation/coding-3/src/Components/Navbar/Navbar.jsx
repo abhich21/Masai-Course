@@ -3,7 +3,13 @@ import { Link } from "react-router-dom";
 export const Navbar = () => {
   return (
     <>
-      <div className="flex justify-between mx-20 navbar">
+      <div className="flex justify-between mx-20 navbar"
+        style={{
+          width: "100%",
+          display: "flex",
+          gap: "10px",
+          justifyContent: "space-evenly"
+      }}>
       {/* <button onClick={onClick} className='px-1 m-1 text-white bg-blue-500 rounded border-2 border-blue-500 hover:bg-white hover:text-blue-500'></button> */}
      <Link to="/"> <button className="px-1 m-1 text-white bg-blue-500 rounded border-2 border-blue-500 Home hover:bg-white hover:text-blue-500">Home</button></Link>
      <Link to="/section/mystery"> <button className="px-1 m-1 text-white bg-blue-500 rounded border-2 border-blue-500 Mystery hover:bg-white hover:text-blue-500">Mystery</button></Link>
