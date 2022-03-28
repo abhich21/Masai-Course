@@ -20,7 +20,7 @@ export const LoginSignUp = () => {
         />
         <br />
         <select value={""} className="location" onChange={(event) => { }}>
-          <option value=""></option>
+          <option value="-----">-----</option>
           <option value="bangalore">Bangalore</option>
           <option value="kolkata">Kolkata</option>
           <option value="delhi">Delhi</option>
