@@ -22,12 +22,11 @@ export const BookCard = ({ id, imageUrl, title, price }) => {
 
   return (
     <Link to={`/bookdetailspage/${id}`}>
-      <div class="container">
+      
       <div className="bookCard">
       <img src={imageUrl} alt={title} />
-      <h2 className="p-2 text-3xl title">{title}</h2>
-      <span className="p-2 text-xl font-bold rounded price hover:bg-blue-700">$ {price}</span>
-      </div>
+      <h2 className="title">{title}</h2>
+      <span className="price">$ {price}</span>
       </div>
     </Link>
   )

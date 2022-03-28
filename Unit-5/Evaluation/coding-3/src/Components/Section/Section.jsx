@@ -6,6 +6,7 @@ import { SortAndFilterButtons } from "../SortAndFilterButtons/SortAndFilterButto
 import styled from "styled-components";
 
 export const Section = () => {
+  const { section } = useParams();
   // you will receive section name from URL here.
   // Get books for only this section and show
   //   Everything else is same as Home page
@@ -18,7 +19,7 @@ export const Section = () => {
     <>
       <h2 style={{ textAlign: "center" }}>
         {
-          //   Show section name here
+          section
         }
       </h2>
       <SortAndFilterButtons handleSort={"give sorting function to component"} />
