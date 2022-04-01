@@ -1,0 +1,24 @@
+{
+  "todos": [
+    {
+      "title": "coca",
+      "status": false,
+      "id": 1
+    },
+    {
+      "title": "fanta",
+      "status": true,
+      "id": 2
+    },
+    {
+      "title": "sprite",
+      "status": true,
+      "id": 3
+    },
+    {
+      "title": "hbhax",
+      "status": false,
+      "id": 4
+    }
+  ]
+}
